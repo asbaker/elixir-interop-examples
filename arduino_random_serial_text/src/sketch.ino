@@ -4,7 +4,7 @@ static String data[ARRAY_SIZE] = {
   "This is some data.",
   "42",
   "{watch_out: \"For JSON\"}",
-  "Woohoo data data data!!!"
+  "Woohoo we got more some!"
 };
 
 int i;
