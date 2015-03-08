@@ -14,26 +14,3 @@ defmodule Serial do
   end
 end
 
-
-defmodule A do
-  def a() do
-    port = Serial.init()
-    Port.list()
-    IO.puts Serial.open(port, "/dev/tty.usbmodem1411", 115200)
-    Port.list()
-
-    :timer.sleep(3000) # wait for arduino sketch to wake
-
-    Serial.write(port, "Testing!!")
-    port
-  end
-
-  def rl() do
-    receive do
-      {_, {:data, data}} ->
-        IO.puts "received #{data}"
-    end
-
-    rl()
-  end
-end
